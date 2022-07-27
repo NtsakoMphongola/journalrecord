@@ -38,9 +38,7 @@ const Login = () => {
     <View style={styles.container}> 
         <FirebaseRecaptchaVerifierModal ref={recaptchaVerifier} firebaseConfig={firebaseConfig} />
       <Text style={styles.title}>Authentication</Text>
-      <Text style={styles.otptext}>
-        Login using OTP 
-      </Text>
+      <Text style={styles.otptext}>Login using OTP </Text>
       <TextInput placeholder='Phone Number With Country Code' onChangeText={setPhoneNumber} keyboardType='phone-pad'
       autoCompleType='tel' style={styles.txtInput} />
       <TouchableOpacity style={styles.sendVerification} onPress={sendVerification}>
@@ -50,7 +48,7 @@ const Login = () => {
        style={styles.txtInput1 } />
         <TouchableOpacity style={styles.sendCode} onPress={confirmCode}>
         <Text style={styles.btntext } onPress={HomePage}>Confirm code </Text>
-      </TouchableOpacity>
+       </TouchableOpacity>
     </View>
   )
 }
@@ -66,14 +64,18 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         borderRadius: 15,
         justifyContent: 'center',
-        
     },
     title: {
-        marginBottom: 50,
+        marginBottom: 25,
         borderBottomWidth: 5,
         backgroundColor: 'green',
         color: 'white',
         fontSize: 28,
+        textTransform: 'uppercase'
+    },
+    otptext: {
+        fontSize: 24,
+        padding: 10,
         textTransform: 'uppercase'
     },
     txtInput: { 
@@ -82,7 +84,8 @@ const styles = StyleSheet.create({
         marginBottom: 25,
         margin: 0,
         fontSize: 20,
-        borderWidth: 5,
+        borderWidth: 2,
+        borderRadius: 15,
         backgroundColor: 'white',
         textAlign: 'center',
         justifyContent: 'space-between',
@@ -90,7 +93,8 @@ const styles = StyleSheet.create({
     txtInput1: { 
         padding: 20,
         paddingTop: 25,
-        borderWidth: 5,
+        borderWidth: 2,
+        borderRadius: 15,
         marginTop: 20,
         marginBottom: 25,
         margin: 0,
@@ -101,10 +105,15 @@ const styles = StyleSheet.create({
     },
     sendCode: {
         padding: 20,
-        backgroundColor: '#595421',
+        borderRadius: 15,
+        backgroundColor: '#ff5421',
     },
     sendVerification: {
-        padding: 20,
+        padding: 20, 
+        borderRadius: 15,
         backgroundColor: '#bb9915',
+    },
+    btntext: {
+        fontSize: 24,
     }
 })
